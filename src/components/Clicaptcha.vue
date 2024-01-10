@@ -28,7 +28,7 @@
 <script>
 import axios from "axios";
 import qs from "qs";
-
+import VueCookies from 'vue-cookies'
 axios.defaults.withCredentials = true;
 
 export default {
@@ -57,8 +57,9 @@ export default {
     },
     setTitle() {
       this.tip = "";
-      console.log(this.$cookies.get("clicaptcha_text"))
-      this.text = this.$cookies.get("clicaptcha_text").split(",");
+      // console.log(VueCookies)
+      // console.log(VueCookies.get("clicaptcha_text"))
+      this.text = VueCookies.get("clicaptcha_text").split(",");
       this.xy = [];
     },
     record(event) {
@@ -170,7 +171,7 @@ export default {
 
   .clicaptcha-refresh-box {
     position: relative;
-    margin-top: 10px;
+    //margin-top: 10px;
   }
 
   .clicaptcha-refresh-line {
