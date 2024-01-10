@@ -29,11 +29,13 @@
 import axios from "axios";
 import qs from "qs";
 import VueCookies from 'vue-cookies'
+
 axios.defaults.withCredentials = true;
 
 export default {
   props: {
     src: String,
+    callback: Function,
   },
   data() {
     return {
@@ -44,8 +46,6 @@ export default {
       isCheck: false,
       xy: [],
       text: [],
-      callback: function () {
-      }
     };
   },
   created() {
@@ -84,11 +84,12 @@ export default {
                   this.tip = this.success;
                   setTimeout(() => {
                     this.close();
-                    this.callback();
-                  }, 1500);
+                    this.callback({"info": captchainfo, status: true, src: this.src});
+                  }, 1000);
                 } else {
                   this.tip = this.error;
                   setTimeout(() => {
+                    this.callback({"info": captchainfo, status: false, src: this.src});
                     this.reset();
                   }, 1500);
                 }
