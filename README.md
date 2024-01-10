@@ -5,7 +5,7 @@
 ### 1. 安装 vue-clicaptcha
 
 ```
-npm install vue-clicaptcha
+npm install vue-clicaptcha@github:Eouo/vue-clicaptcha
 ```
 
 ### 2. 部署后端环境
