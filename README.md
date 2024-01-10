@@ -10,7 +10,7 @@ npm install vue-clicaptcha@github:Eouo/vue-clicaptcha
 
 ### 2. 部署后端环境
 
-移步至 [clicaptcha-server](https://github.com/hooray/clicaptcha-server) 项目
+移步至 [clicaptcha-server](https://github.com/Eouo/clicaptcha-server) 项目
 
 ## 使用
 
