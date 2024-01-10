@@ -1,11 +1,10 @@
-import Vue from 'vue'
-import App from './App.vue'
 // import VueCookies from 'vue-cookies'
-
-Vue.config.productionTip = false
-
+import {createApp} from 'vue'
+import App from './App.vue'
+import VueCookies from 'vue-cookies'
+const app = createApp(App)
+app.config.globalProperties.productionTip = false
+app.config.globalProperties.$cookies = VueCookies
 // Vue.use(VueCookies)
 
-new Vue({
-  render: h => h(App)
-}).$mount('#app')
+app.mount('#app')
